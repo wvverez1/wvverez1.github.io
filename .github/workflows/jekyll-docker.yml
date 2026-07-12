@@ -8,14 +8,13 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
     - name: Build the site in the jekyll/builder container
       run: |
-  docker run \
-    -v /home/runner/work/wvverez1.github.io/wvverez1.github.io:/srv/jekyll \
-    -v /home/runner/work/wvverez1.github.io/wvverez1.github.io/_site:/srv/jekyll/_site \
-    jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && bundle install && jekyll build --future"
+        docker run \
+          -v /home/runner/work/wvverez1.github.io/wvverez1.github.io:/srv/jekyll \
+          -v /home/runner/work/wvverez1.github.io/wvverez1.github.io/_site:/srv/jekyll/_site \
+          jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && bundle install && jekyll build --future"
