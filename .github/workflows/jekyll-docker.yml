@@ -17,4 +17,4 @@ jobs:
         docker run \
           -v /home/runner/work/wvverez1.github.io/wvverez1.github.io:/srv/jekyll \
           -v /home/runner/work/wvverez1.github.io/wvverez1.github.io/_site:/srv/jekyll/_site \
-          jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && bundle config set --local deployment 'false' && bundle install && jekyll build --future"
+          jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && bundle update --bundler && bundle install && jekyll build --future"
